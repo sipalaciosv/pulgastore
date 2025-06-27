@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "nombre": "Taza personalizada",
+    "precio": 4990,
+    "imagen": "img/productos/taza1.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 2,
+    "nombre": "Bolso ecológico",
+    "precio": 7990,
+    "imagen": "img/productos/bolso1.jpg",
+    "categoria": "Bolsos"
+  },
+  {
+    "id": 3,
+    "nombre": "Cojín estampado",
+    "precio": 5990,
+    "imagen": "img/productos/cojin1.jpg",
+    "categoria": "Decoración"
+  },
+  {
+    "id": 4,
+    "nombre": "Llaveros divertidos",
+    "precio": 2490,
+    "imagen": "img/productos/llavero1.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 5,
+    "nombre": "Polera personalizada",
+    "precio": 9990,
+    "imagen": "img/productos/polera1.jpg",
+    "categoria": "Ropa"
+  },
+  {
+    "id": 6,
+    "nombre": "Botella térmica",
+    "precio": 8990,
+    "imagen": "img/productos/botella1.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 7,
+    "nombre": "Agenda creativa",
+    "precio": 7990,
+    "imagen": "img/productos/agenda1.jpg",
+    "categoria": "Papelería"
+  },
+  {
+    "id": 8,
+    "nombre": "Cuadro decorativo",
+    "precio": 12990,
+    "imagen": "img/productos/cuadro1.jpg",
+    "categoria": "Decoración"
+  },
+  {
+    "id": 9,
+    "nombre": "Tote bag personalizada",
+    "precio": 7990,
+    "imagen": "img/productos/totebag1.jpg",
+    "categoria": "Bolsos"
+  },
+  {
+    "id": 10,
+    "nombre": "Taza mágica",
+    "precio": 5990,
+    "imagen": "img/productos/taza2.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 11,
+    "nombre": "Set stickers",
+    "precio": 1990,
+    "imagen": "img/productos/stickers1.jpg",
+    "categoria": "Papelería"
+  },
+  {
+    "id": 12,
+    "nombre": "Pendrive madera",
+    "precio": 6990,
+    "imagen": "img/productos/pendrive1.jpg",
+    "categoria": "Tecnología"
+  },
+  {
+    "id": 13,
+    "nombre": "Cojín gamer",
+    "precio": 6990,
+    "imagen": "img/productos/cojin2.jpg",
+    "categoria": "Decoración"
+  },
+  {
+    "id": 14,
+    "nombre": "Bolso mini colores",
+    "precio": 5990,
+    "imagen": "img/productos/bolso2.jpg",
+    "categoria": "Bolsos"
+  },
+  {
+    "id": 15,
+    "nombre": "Polera oversize",
+    "precio": 11990,
+    "imagen": "img/productos/polera2.jpg",
+    "categoria": "Ropa"
+  },
+  {
+    "id": 16,
+    "nombre": "Cuadro inspirador",
+    "precio": 13990,
+    "imagen": "img/productos/cuadro2.jpg",
+    "categoria": "Decoración"
+  },
+  {
+    "id": 17,
+    "nombre": "Taza gamer",
+    "precio": 5490,
+    "imagen": "img/productos/taza3.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 18,
+    "nombre": "Botella personalizada",
+    "precio": 9490,
+    "imagen": "img/productos/botella2.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 19,
+    "nombre": "Agenda motivacional",
+    "precio": 7990,
+    "imagen": "img/productos/agenda2.jpg",
+    "categoria": "Papelería"
+  },
+  {
+    "id": 20,
+    "nombre": "Set stickers cute",
+    "precio": 1990,
+    "imagen": "img/productos/stickers2.jpg",
+    "categoria": "Papelería"
+  }
+]
