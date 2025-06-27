@@ -1,125 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-  <title>Pulga Store</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-  <link rel="stylesheet" href="estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulga Store - Tu tienda de regalos únicos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <!-- Tipografía Inter (opcional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
+  <!-- NAVBAR STICKY -->
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#">Pulga Store</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="img/logo.svg" alt="Pulga Store Logo" class="logo-navbar">
+      
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="menuPrincipal">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="seguimiento.html">Seguimiento</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin/login.html">Admin</a></li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pedidos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Clientes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contacto</a>
+            <a class="nav-link position-relative" href="pedidos.html" title="Carrito">
+              <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24">
+                <path fill="var(--color-3)" d="M7 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM7.333 18h10.8c.6 0 1.134-.4 1.266-.983l2-8A1.334 1.334 0 0 0 20.133 7H6.174l-.333-1.49A2 2 0 0 0 3.88 4.667H2.133A1.133 1.133 0 1 0 2.133 7h1.2l2.334 10.453A2.667 2.667 0 0 0 8.267 19.333h10.8a1.334 1.334 0 1 0 0-2.667H8.267A.667.667 0 0 1 7.333 18Z"/>
+              </svg>
+              <span id="carrito-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" style="font-size:0.8em;">
+                0
+              </span>
+            </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <header class="text-center py-3">
-    <h1 class="mb-0">Confía en nosotros</h1>
-  </header>
-  <div class="container my-3">
-    <div id="fechahora" class="alert alert-info text-center fw-bold"></div>
+  <!-- HERO LANDING -->
+<section class="hero d-flex flex-column justify-content-center align-items-center">
+  <div class="mb-4">
+    <span class="logo-hero-bg">
+      <img src="img/logo.svg" alt="Logo Pulga Store" class="logo-hero">
+    </span>
   </div>
+  <a href="productos.html" class="btn btn-cta" style="margin-top: 1.3em;">Ver catálogo</a>
+</section>
 
-  <main class="container my-4">
-    <div class="row">
-      <section class="col-12 col-md-6 mb-4">
-        <h2>Testimonios de Clientes</h2>
-        <!-- los testimonios ahora van con un slider -->
-        <div class="testimonios-slider">
-          <div>
-            <blockquote>
-              "Excelente atención y productos únicos. Siempre compro mis regalos aquí."
-              <br>— Camila M., clienta frecuente
-            </blockquote>
-          </div>
-          <div>
-            <blockquote>
-              "Hice un pedido desde Santiago y llegó en dos días. Todo perfecto."
-              <br>— Jorge R., cliente online
-            </blockquote>
-          </div>
-          <div>
-            <blockquote>
-              "Me encantó poder personalizar mi bolso. Se nota la dedicación."
-              <br>— Antonia F., clienta creativa
-            </blockquote>
-          </div>
-        </div>
-      </section>
-      <section class="col-12 col-md-6 mb-4">
-        <h2>Sobre Nosotros</h2>
-        <p>
-          Pulga Store es un emprendimiento juvenil dedicado a la venta de artículos únicos y personalizados. Estamos ubicados en Iquique y ofrecemos atención en línea y despacho a domicilio. Nos enfocamos en brindar productos de calidad y mantener contacto cercano con nuestros clientes.
-        </p>
-      </section>
-    </div>
-    <section class="mb-4">
-      <h2>Galería de Productos</h2>
-      <!-- Las imagenes al pincharlas se ven en grande  -->
-      <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-        <figure>
-          <a href="https://images-cdn.ubuy.co.at/661c2b1f565435079c1feb70-nike-air-force-1-custom-shoes-low-south.jpg" data-fancybox="galeria" data-caption="Zapatos personalizados">
-            <img src="https://images-cdn.ubuy.co.at/661c2b1f565435079c1feb70-nike-air-force-1-custom-shoes-low-south.jpg" alt="Zapatos personalizados" class="img-fluid">
-          </a>
-          <figcaption>Zapatos personalizados</figcaption>
-        </figure>
-        <figure>
-          <a href="https://greengraphic.cl/cdn/shop/files/bolso_grande_mockup.png?v=1729267983" data-fancybox="galeria" data-caption="Bolso a pedido">
-            <img src="https://greengraphic.cl/cdn/shop/files/bolso_grande_mockup.png?v=1729267983" alt="Bolso personalizado" class="img-fluid">
-          </a>
-          <figcaption>Bolso a pedido</figcaption>
-        </figure>
-        <figure>
-          <a href="https://tiendasfutbol.cl/wp-content/uploads/2024/08/camisetas-personalizadas-de-futbol-chile.webp" data-fancybox="galeria" data-caption="Camisetas personalizadas">
-            <img src="https://tiendasfutbol.cl/wp-content/uploads/2024/08/camisetas-personalizadas-de-futbol-chile.webp" alt="Polera personalizada" class="img-fluid">
-          </a>
-          <figcaption>Camisetas personalizadas</figcaption>
-        </figure>
+
+
+  <!-- SECCIONES EXTRAS (puedes rellenar después) -->
+  <main class="container my-5">
+    <section class="mb-5 text-center">
+      <h2 class="mb-4" style="color:var(--color-2)">Productos destacados</h2>
+      <div class="row justify-content-center" id="destacados">
+        <!-- Aquí puedes inyectar 3-4 productos estrella como cards -->
       </div>
+    </section>
+    <section class="mb-5 text-center">
+      <h2 class="mb-4" style="color:var(--color-2)">Testimonios</h2>
+      <blockquote style="background:var(--color-1);color:var(--color-3);padding:1.3rem;border-radius:1em;box-shadow:var(--shadow)">
+        "Increíble calidad, el regalo llegó rapidísimo y personalizado justo como lo quería." <br>
+        <span style="color:var(--color-2);font-weight:600">— Camila, clienta frecuente</span>
+      </blockquote>
+    </section>
+    <section class="mb-5 text-center">
+      <h2 class="mb-4" style="color:var(--color-2)">¿Quiénes somos?</h2>
+      <p class="mx-auto" style="max-width: 500px;">
+        Somos un equipo joven de Iquique con ganas de cambiar la forma de regalar. Nuestro enfoque es calidad, personalización y cercanía con nuestros clientes. ¡Confía en Pulga Store!
+      </p>
     </section>
   </main>
 
-  <footer class="text-center py-3">
-    <p>Equipo Pulga Store - 2025</p>
-    <p>
-      <a href="#">Facebook</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">WhatsApp</a>
-    </p>
-    <p><a href="contacto.html">Ir a la página de contacto</a></p>
+  <footer class="text-center py-4" style="background:var(--color-3);color:white;">
+    <div>© Pulga Store 2025 &nbsp;|&nbsp; <a href="mailto:contacto@pulgastore.cl" style="color:var(--color-1)">Contáctanos</a></div>
   </footer>
-   
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/fecha.js"></script>
 
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Aquí puedes agregar tu main.js si luego quieres animar/inyectar productos destacados -->
+   <script src="js/main.js"></script>
 
 </body>
 </html>
