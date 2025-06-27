@@ -10,8 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar igual que en index, puedes copiar/pegar el bloque nav entero -->
-  <nav class="navbar navbar-expand-lg">
+   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
       <img src="img/logo.svg" alt="Pulga Store Logo" class="logo-navbar">
@@ -26,7 +25,6 @@
           <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="productos.html">Catálogo</a></li>
           <li class="nav-item"><a class="nav-link" href="seguimiento.html">Seguimiento</a></li>
-          <li class="nav-item"><a class="nav-link" href="admin/login.html">Admin</a></li>
           <li class="nav-item">
             <a class="nav-link position-relative" href="pedidos.html" title="Carrito">
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24">
@@ -44,8 +42,6 @@
 
   <main class="container py-5">
     <h1 class="text-center mb-4" style="color:var(--color-2)">Catálogo de productos</h1>
-
-    <!-- Filtros -->
     <div class="row mb-4 justify-content-center">
       <div class="col-md-4 mb-2">
         <input id="buscador" class="form-control" type="search" placeholder="Buscar producto...">
@@ -53,7 +49,6 @@
       <div class="col-md-3 mb-2">
         <select id="categoria" class="form-select">
           <option value="">Todas las categorías</option>
-          <!-- JS inyectará opciones si usas categorías -->
         </select>
       </div>
       <div class="col-md-3 mb-2">
@@ -64,24 +59,30 @@
         </select>
       </div>
     </div>
-
-    <!-- Catálogo -->
     <div class="row" id="catalogo">
-      <!-- JS insertará las cards de producto aquí -->
     </div>
 
-    <!-- Paginación -->
     <div class="d-flex justify-content-center mt-4" id="paginacion">
-      <!-- JS renderiza los controles de página aquí -->
     </div>
   </main>
 
   <footer class="text-center py-4" style="background:var(--color-3);color:white;">
     <div>© Pulga Store 2025 &nbsp;|&nbsp; <a href="mailto:contacto@pulgastore.cl" style="color:var(--color-1)">Contáctanos</a></div>
   </footer>
+<script src="js/loader.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/cart.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+  <script src="js/carrito.js"></script>
   <script src="js/productos.js"></script>
+  <script>
+  fetch('loader.html')
+    .then(res => res.text())
+    .then(html => document.body.insertAdjacentHTML('afterbegin', html));
+</script>
+
 </body>
 </html>

@@ -1,4 +1,3 @@
-// Lee el JSON y renderiza las cards de producto
 let productos = [];
 let productosPorPagina = 8;
 let paginaActual = 1;
@@ -38,7 +37,6 @@ function renderCatalogo() {
   renderPaginacion(filtrados.length);
 }
 
-// Filtro por nombre/categoría/orden
 function filtrarProductos() {
   let texto = document.getElementById('buscador').value.toLowerCase();
   let categoria = document.getElementById('categoria').value;
@@ -47,7 +45,6 @@ function filtrarProductos() {
     prod.nombre.toLowerCase().includes(texto) &&
     (categoria === "" || prod.categoria === categoria)
   );
-  // Ordenar
   if (orden === "precio_asc") filtrados.sort((a, b) => a.precio - b.precio);
   if (orden === "precio_desc") filtrados.sort((a, b) => b.precio - a.precio);
   return filtrados;
@@ -58,7 +55,6 @@ function paginarProductos(lista) {
   return lista.slice(ini, ini + productosPorPagina);
 }
 
-// Renderiza paginación
 function renderPaginacion(totalFiltrados) {
   const paginacion = document.getElementById('paginacion');
   let totalPaginas = Math.ceil(totalFiltrados / productosPorPagina);
@@ -69,7 +65,7 @@ function renderPaginacion(totalFiltrados) {
       <button class="paginacion-btn${i === paginaActual ? " active" : ""}" data-pag="${i}">${i}</button>
     `;
   }
-  // Eventos paginación
+
   document.querySelectorAll(".paginacion-btn").forEach(btn =>
     btn.onclick = () => {
       paginaActual = Number(btn.dataset.pag);
@@ -78,7 +74,6 @@ function renderPaginacion(totalFiltrados) {
   );
 }
 
-// Renderiza opciones de categorías en el select
 function renderCategorias() {
   categorias = new Set(productos.map(p => p.categoria));
   const select = document.getElementById('categoria');
@@ -87,8 +82,13 @@ function renderCategorias() {
     select.innerHTML += `<option value="${cat}">${cat}</option>`;
   });
 }
+toastr.options = {
+  "closeButton": false,
+  "progressBar": true,
+  "positionClass": "toast-bottom-right",
+  "timeOut": "1400"
+};
 
-// Eventos de filtros
 document.addEventListener("DOMContentLoaded", () => {
   cargarProductos();
   document.getElementById('buscador').addEventListener('input', () => {
@@ -101,14 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
     paginaActual = 1; renderCatalogo();
   });
 });
-// Evento para agregar productos al carrito (modular)
 document.getElementById('catalogo').addEventListener('click', e => {
   if (e.target.classList.contains('btn-add')) {
     const id = Number(e.target.dataset.id);
     const prod = productos.find(p => p.id === id);
     addToCart(prod);
-    // Feedback visual (opcional):
     e.target.textContent = "¡Agregado!";
     setTimeout(() => e.target.textContent = "Agregar al carrito", 800);
+    toastr.success(`"${prod.nombre}" agregado al carrito`, '¡Éxito!');
   }
 });

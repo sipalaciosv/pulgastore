@@ -7,11 +7,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/landing.css">
-  <!-- Tipografía Inter (opcional) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- NAVBAR STICKY -->
+
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
@@ -27,7 +26,6 @@
           <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="productos.html">Catálogo</a></li>
           <li class="nav-item"><a class="nav-link" href="seguimiento.html">Seguimiento</a></li>
-          <li class="nav-item"><a class="nav-link" href="admin/login.html">Admin</a></li>
           <li class="nav-item">
             <a class="nav-link position-relative" href="pedidos.html" title="Carrito">
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24">
@@ -43,7 +41,6 @@
     </div>
   </nav>
 
-  <!-- HERO LANDING -->
 <section class="hero d-flex flex-column justify-content-center align-items-center">
   <div class="mb-4">
     <span class="logo-hero-bg">
@@ -53,14 +50,10 @@
   <a href="productos.html" class="btn btn-cta" style="margin-top: 1.3em;">Ver catálogo</a>
 </section>
 
-
-
-  <!-- SECCIONES EXTRAS (puedes rellenar después) -->
   <main class="container my-5">
     <section class="mb-5 text-center">
       <h2 class="mb-4" style="color:var(--color-2)">Productos destacados</h2>
       <div class="row justify-content-center" id="destacados">
-        <!-- Aquí puedes inyectar 3-4 productos estrella como cards -->
       </div>
     </section>
     <section class="mb-5 text-center">
@@ -81,10 +74,15 @@
   <footer class="text-center py-4" style="background:var(--color-3);color:white;">
     <div>© Pulga Store 2025 &nbsp;|&nbsp; <a href="mailto:contacto@pulgastore.cl" style="color:var(--color-1)">Contáctanos</a></div>
   </footer>
+  <script src="js/loader.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Aquí puedes agregar tu main.js si luego quieres animar/inyectar productos destacados -->
    <script src="js/main.js"></script>
+<script>
+  fetch('loader.html')
+    .then(res => res.text())
+    .then(html => document.body.insertAdjacentHTML('afterbegin', html));
+</script>
 
 </body>
 </html>

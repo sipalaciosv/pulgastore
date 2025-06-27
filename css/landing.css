@@ -1,4 +1,3 @@
-/* Hero Landing */
 .hero {
   min-height: 88vh;
   display: flex;
@@ -22,8 +21,6 @@
   width: 12.5em;
   height: 12.5em;
 }
-
-/* Botón principal en el hero */
 .hero .btn-cta {
   padding: 1rem 2.2rem;
   background: var(--color-5);
@@ -41,8 +38,6 @@
   color: var(--color-bg);
   transform: scale(1.06);
 }
-
-/* Responsive hero logo */
 @media (max-width: 700px) {
   .hero { min-height: 68vh; }
   .logo-hero { width: 8em; height: 8em; }

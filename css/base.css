@@ -9,8 +9,24 @@
   --radius: 16px;
   --shadow: 0 2px 16px 0 rgba(93,144,179,0.07), 0 1.5px 8px 0 rgba(61,76,92,0.09);
 }
+html, body {
+  height: 100%;
+}
 
-/* Reset y tipografía */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.container {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
 body {
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   background: var(--color-bg);
@@ -19,7 +35,6 @@ body {
   padding: 0;
 }
 
-/* Navbar sticky y logo */
 .navbar {
   position: sticky;
   top: 0;
@@ -55,8 +70,16 @@ body {
   color: var(--color-5) !important;
 }
 
-/* Tarjetas generales */
 .card {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+.loader-logo {
+  width: 200px !important;
+  height: 200px !important;
+  animation: spin 1s linear infinite;
 }

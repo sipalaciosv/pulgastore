@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  // Cargar productos.json
   const resp = await fetch('data/productos.json');
   const productos = await resp.json();
-  // Seleccionar 4 destacados (puedes filtrar por categoría, random, etc)
   const destacados = productos.slice(0, 4);
-
-  // Inyectar cards en el landing
   const cont = document.getElementById('destacados');
   if (cont) {
     destacados.forEach(prod => {
