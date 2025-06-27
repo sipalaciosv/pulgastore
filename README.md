@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="img/logo.svg" alt="Pulga Store Logo" width="160" />
+</p>
+
 # Pulga Store 🛒
 
 ¡Bienvenido/a a **Pulga Store**!  
@@ -49,7 +53,17 @@ Tienda web de regalos personalizados y detalles únicos, desarrollada como proye
 ---
 
 ## 📸 Capturas
+### Inicio
+![Inicio](img/capturas/inicio.png)
 
+### Catálogo
+![Catálogo de productos](img/capturas/catalogo.png)
+
+### Carrito de compras
+![Carrito de compras](img/capturas/carrito.png)
+
+### Seguimiento de pedido
+![Seguimiento de pedido](img/capturas/seguimiento.png)
 
 ---
 
