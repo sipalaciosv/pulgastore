@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "nombre": "Taza personalizada",
+    "precio": 4990,
+    "imagen": "https://images.unsplash.com/photo-1569616536075-9c90244601c0?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 2,
+    "nombre": "Bolso ecológico",
+    "precio": 7990,
+    "imagen": "https://plus.unsplash.com/premium_photo-1661666994446-6352c334bf80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fEJvbHNvJTIwZWNvbCVDMyVCM2dpY298ZW58MHx8MHx8fDA%3D",
+    "categoria": "Bolsos"
+  },
+  {
+    "id": 3,
+    "nombre": "Cojín estampado",
+    "precio": 5990,
+    "imagen": "https://media.falabella.com/falabellaCL/133544910_01/w=800,h=800,fit=pad",
+    "categoria": "Decoración"
+  },
+  {
+    "id": 4,
+    "nombre": "Llaveros One Piece",
+    "precio": 2490,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_653996-MLC49161030351_022022-O.webp",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 5,
+    "nombre": "Polera one piece",
+    "precio": 9990,
+    "imagen": "https://www.marstonstore.cl/cdn/shop/products/onepiece9.jpg?v=1643523563",
+    "categoria": "Ropa"
+  },
+  {
+    "id": 6,
+    "nombre": "Botella térmica",
+    "precio": 8990,
+    "imagen": "https://www.garuga.cl/wp-content/uploads/2024/02/Bot-COI-WEB-700x946.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 7,
+    "nombre": "Agenda one piece",
+    "precio": 7990,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_810997-MLC81023547621_112024-F-agenda-one-piece-fechada-2025-incluye-stickers.webp",
+    "categoria": "Papelería"
+  },
+  {
+    "id": 8,
+    "nombre": "Cuadro One Piece",
+    "precio": 12990,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_708552-MLC53765676598_022023-O-cuadro-one-piece-segmentado-envio-gratis.webp",
+    "categoria": "Decoración"
+  },
+  {
+    "id": 9,
+    "nombre": "Tote bag personalizada",
+    "precio": 7990,
+    "imagen": "https://elefanta.cl/wp-content/uploads/2019/10/bola-mam%C3%A1-todos.jpg",
+    "categoria": "Bolsos"
+  },
+  {
+    "id": 10,
+    "nombre": "Taza mágica",
+    "precio": 5990,
+    "imagen": "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+    "categoria": "Accesorios"
+  }
+]

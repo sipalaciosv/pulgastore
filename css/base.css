@@ -1,0 +1,85 @@
+:root {
+  --color-1: #a6c6ed;
+  --color-2: #5b90b3;
+  --color-3: #3d4c5c;
+  --color-4: #b4d9d9;
+  --color-5: #f8b98b;
+  --color-bg: #f8fafd;
+  --color-text: #2e3842;
+  --radius: 16px;
+  --shadow: 0 2px 16px 0 rgba(93,144,179,0.07), 0 1.5px 8px 0 rgba(61,76,92,0.09);
+}
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.container {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: var(--shadow);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.navbar-brand {
+  color: var(--color-2) !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+.logo-navbar {
+  width: 56px;
+  height: 56px;
+  margin-right: 0.35em;
+}
+@media (max-width: 700px) {
+  .logo-navbar { width: 40px; height: 40px; }
+}
+.navbar-nav .nav-link {
+  color: var(--color-3) !important;
+  font-weight: 500;
+  margin: 0 0.6rem;
+  transition: color 0.2s;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: var(--color-5) !important;
+}
+
+.card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+.loader-logo {
+  width: 200px !important;
+  height: 200px !important;
+  animation: spin 1s linear infinite;
+}
