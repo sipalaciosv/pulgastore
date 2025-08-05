@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/pedidos.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg">
@@ -26,7 +27,10 @@
           <li class="nav-item"><a class="nav-link" href="productos.html">Catálogo</a></li>
           <li class="nav-item"><a class="nav-link" href="seguimiento.html">Seguimiento</a></li>
           <li class="nav-item">
-            <a class="nav-link position-relative" href="pedidos.html" title="Carrito">
+            <span class="nav-link" id="usuario-nombre" style="font-weight:600;color:var(--color-2)"></span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link position-relative" href="pedidos.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Carrito">
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24">
                 <path fill="var(--color-3)" d="M7 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM7.333 18h10.8c.6 0 1.134-.4 1.266-.983l2-8A1.334 1.334 0 0 0 20.133 7H6.174l-.333-1.49A2 2 0 0 0 3.88 4.667H2.133A1.133 1.133 0 1 0 2.133 7h1.2l2.334 10.453A2.667 2.667 0 0 0 8.267 19.333h10.8a1.334 1.334 0 1 0 0-2.667H8.267A.667.667 0 0 1 7.333 18Z"/>
               </svg>
@@ -49,13 +53,24 @@
   </main>
 
   <footer class="text-center py-4" style="background:var(--color-3);color:white;">
-    <div>© Pulga Store 2025 &nbsp;|&nbsp; <a href="mailto:contacto@pulgastore.cl" style="color:var(--color-1)">Contáctanos</a></div>
-  </footer>
+  <div class="mb-2">
+    <a href="https://facebook.com/" target="_blank" class="mx-2" title="Facebook" style="color:#fff;">
+      <i class="bi bi-facebook" style="font-size:1.6em;"></i>
+    </a>
+    <a href="https://instagram.com/" target="_blank" class="mx-2" title="Instagram" style="color:#fff;">
+      <i class="bi bi-instagram" style="font-size:1.6em;"></i>
+    </a>
+  </div>
+  <div>© Pulga Store 2025 &nbsp;|&nbsp; <a href="mailto:contacto@pulgastore.cl" style="color:var(--color-1)">Contáctanos</a></div>
+</footer>
+ 
 <script src="js/loader.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/usuario.js"></script>
   <script src="js/carrito.js"></script>
   <script src="js/pedidos.js"></script>
+  <script src="js/main.js"></script>
   <script>
   fetch('loader.html')
     .then(res => res.text())

@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/landing.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 </head>
 <body>
 
@@ -27,7 +29,10 @@
           <li class="nav-item"><a class="nav-link" href="productos.html">Catálogo</a></li>
           <li class="nav-item"><a class="nav-link" href="seguimiento.html">Seguimiento</a></li>
           <li class="nav-item">
-            <a class="nav-link position-relative" href="pedidos.html" title="Carrito">
+            <span class="nav-link" id="usuario-nombre" style="font-weight:600;color:var(--color-2)"></span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link position-relative" href="pedidos.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Carrito">
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24">
                 <path fill="var(--color-3)" d="M7 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM7.333 18h10.8c.6 0 1.134-.4 1.266-.983l2-8A1.334 1.334 0 0 0 20.133 7H6.174l-.333-1.49A2 2 0 0 0 3.88 4.667H2.133A1.133 1.133 0 1 0 2.133 7h1.2l2.334 10.453A2.667 2.667 0 0 0 8.267 19.333h10.8a1.334 1.334 0 1 0 0-2.667H8.267A.667.667 0 0 1 7.333 18Z"/>
               </svg>
@@ -48,6 +53,49 @@
     </span>
   </div>
   <a href="productos.html" class="btn btn-cta" style="margin-top: 1.3em;">Ver catálogo</a>
+</section>
+  <section class="container my-5">
+  <h2 class="mb-4 text-center" style="color:var(--color-2)">Nuestros productos destacados</h2>
+  <div id="carouselProductos" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/reloj.jpg" class="d-block w-100" alt="Reloj" style="max-height:350px;object-fit:contain;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Reloj</h5>
+          <p>$300</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/audifonos1.jpg" class="d-block w-100" alt="Audífonos" style="max-height:350px;object-fit:contain;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Audífonos</h5>
+          <p>$200</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/audifonos2.jpg" class="d-block w-100" alt="Audífonos" style="max-height:350px;object-fit:contain;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Audífonos</h5>
+          <p>$100</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/silla.jpg" class="d-block w-100" alt="Silla" style="max-height:350px;object-fit:contain;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Silla</h5>
+          <p>$400</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
 </section>
 
   <main class="container my-5">
@@ -72,11 +120,46 @@
   </main>
 
   <footer class="text-center py-4" style="background:var(--color-3);color:white;">
-    <div>© Pulga Store 2025 &nbsp;|&nbsp; <a href="mailto:contacto@pulgastore.cl" style="color:var(--color-1)">Contáctanos</a></div>
-  </footer>
+  <div class="mb-2">
+    <a href="https://facebook.com/" target="_blank" class="mx-2" title="Facebook" style="color:#fff;">
+      <i class="bi bi-facebook" style="font-size:1.6em;"></i>
+    </a>
+    <a href="https://instagram.com/" target="_blank" class="mx-2" title="Instagram" style="color:#fff;">
+      <i class="bi bi-instagram" style="font-size:1.6em;"></i>
+    </a>
+  </div>
+  <div>© Pulga Store 2025 &nbsp;|&nbsp; <a href="mailto:contacto@pulgastore.cl" style="color:var(--color-1)">Contáctanos</a></div>
+</footer>
+
+<div class="modal fade" id="modalNombre" tabindex="-1" aria-labelledby="modalNombreLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form id="form-nombre">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalNombreLabel">¡Bienvenido/a!</h5>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
   <script src="js/loader.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/usuario.js"></script>
    <script src="js/main.js"></script>
 <script>
   fetch('loader.html')

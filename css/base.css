@@ -83,3 +83,10 @@ body {
   height: 200px !important;
   animation: spin 1s linear infinite;
 }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: none !important;         
+  background-color: var(--color-2); 
+  border-radius: 50%;
+  opacity: 0.98;
+}
