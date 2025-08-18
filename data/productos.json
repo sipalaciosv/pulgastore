@@ -1,6 +1,6 @@
 [
-  { "id": 1, "nombre": "Reloj", "precio": 300, "imagen": "img/reloj.jpg", "categoria": "Accesorios" },
-  { "id": 2, "nombre": "Audífonos", "precio": 200, "imagen": "img/audifonos1.jpg", "categoria": "Accesorios" },
-  { "id": 3, "nombre": "Audífonos", "precio": 100, "imagen": "img/audifonos2.jpg", "categoria": "Accesorios" },
-  { "id": 4, "nombre": "Silla", "precio": 400, "imagen": "img/silla.jpg", "categoria": "Muebles" }
+  { "id": 1, "nombre": "Reloj",      "precio": 300, "imagen": "img/reloj.jpg",      "categoria": "Accesorios", "stock": 5, "descripcion": "Reloj clásico metálico" },
+  { "id": 2, "nombre": "Audífonos A","precio": 200, "imagen": "img/audifonos1.jpg", "categoria": "Accesorios", "stock": 1, "descripcion": "Over-ear con micrófono" },
+  { "id": 3, "nombre": "Audífonos B","precio": 100, "imagen": "img/audifonos2.jpg", "categoria": "Accesorios", "stock": 3, "descripcion": "In-ear livianos" },
+  { "id": 4, "nombre": "Silla",      "precio": 400, "imagen": "img/silla.jpg",      "categoria": "Muebles",    "stock": 0, "descripcion": "Silla ergonómica" }
 ]
