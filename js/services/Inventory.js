@@ -2,7 +2,7 @@ import { Product } from "../models/Product.js";
 
 
 const LS_INV_KEY = "pulga_inventory_v1";
-
+const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
 export class Inventory {
   #products = new Map();
@@ -68,5 +68,24 @@ export class Inventory {
     if (!p) return;
     p.stock = Math.max(0, p.stock - qty);
     this.save();
+  }
+
+  async verifyStockAsync(id, qty) {
+    await delay(300); 
+    const p = this.get(id);
+    if (!p) throw new Error("Producto no encontrado");
+    return p.stock >= qty; 
+  }
+
+  async decreaseStockAsync(id, qty) {
+    await delay(500); 
+    const p = this.get(id);
+    if (!p) throw new Error("Producto no encontrado");
+    if (p.stock < qty) {
+      return { ok: false, reason: "not_enough", current: p.stock };
+    }
+    p.stock = Math.max(0, p.stock - qty);
+    this.save();
+    return { ok: true, newStock: p.stock };
   }
 }

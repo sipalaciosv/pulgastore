@@ -80,19 +80,51 @@ export function mountCart({ inventory, cart, onCartChange }) {
     );
   }
 
-  function finalizarPedido(e) {
+  async function finalizarPedido(e) {
     e?.preventDefault();
-    const codigo = "PS-" + Math.floor(1000 + Math.random() * 9000);
-    const fecha = new Date().toLocaleString();
 
     const detalle = cart.entries().map(([id, qty]) => {
       const p = inventory.get(id);
       return { id, nombre: p?.nombre || "?", precio: p?.precio || 0, cantidad: qty };
     });
 
-    const total = detalle.reduce((s, it) => s + it.precio * it.cantidad, 0);
+    for (const item of detalle) {
+      const ok = await inventory.verifyStockAsync(item.id, item.cantidad);
+      if (!ok) {
+        clear(form);
+        clear(resumen);
+        form.appendChild(
+          el("div", { class:"alert alert-danger text-center" },
+            `No hay stock suficiente para "${item.nombre}". `,
+            el("div", { class:"mt-2" },
+              el("a", { href:"productos.html", class:"btn btn-outline-primary btn-sm" }, "Volver al catálogo")
+            )
+          )
+        );
+        return; 
+      }
+    }
 
-    detalle.forEach(it => inventory.decreaseStock(it.id, it.cantidad));
+    for (const item of detalle) {
+      const resp = await inventory.decreaseStockAsync(item.id, item.cantidad);
+      if (!resp.ok) {
+        clear(form);
+        clear(resumen);
+        form.appendChild(
+          el("div", { class:"alert alert-warning text-center" },
+            `El producto "${inventory.get(item.id)?.nombre || item.id}" se quedó sin stock durante la compra.`,
+            el("div", { class:"mt-2" },
+              el("a", { href:"pedidos.html", class:"btn btn-outline-secondary btn-sm" }, "Reintentar")
+            )
+          )
+        );
+        return; 
+      }
+    }
+
+    const codigo = "PS-" + Math.floor(1000 + Math.random() * 9000);
+    const fecha = new Date().toLocaleString();
+    const total = detalle.reduce((s, it) => s + it.precio * it.cantidad, 0);
 
     const orden = { codigo, fecha, carrito: detalle, total };
     const prev = JSON.parse(localStorage.getItem(LS_ORDERS) || "[]");
