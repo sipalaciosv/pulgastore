@@ -81,3 +81,14 @@
   background: var(--color-5);
   color: white;
 }
+.product-tags {
+display: flex; flex-wrap: wrap; gap: .35rem; justify-content: center; margin: .5rem 0 .2rem;
+}
+.product-tag {
+background: var(--color-1); color: var(--color-3); font-size: .78rem; font-weight: 700;
+padding: .18rem .5rem; border-radius: 999px; box-shadow: 0 1px 6px rgba(61,76,92,.08);
+}
+
+
+/* Filtros */
+#precioMaxValue { font-weight: 700; color: var(--color-2); }
