@@ -1,12 +1,15 @@
 export class Product {
-  constructor({id, nombre, precio, imagen, categoria, stock, descripcion}) {
-    this.id = id;
-    this.nombre = nombre;
-    this.precio = precio;
+  constructor({id, nombre, precio, imagen, categoria, stock, descripcion, etiquetas}) {
+    this.id = Number(id);
+    this.nombre = nombre?.trim() || "";
+    this.precio = Number(precio) || 0;
     this.imagen = imagen || "";
     this.categoria = categoria || "";
     this.stock = Number(stock) || 0;
     this.descripcion = descripcion || "";
+    this.etiquetas = Array.isArray(etiquetas)
+      ? etiquetas.map(e => String(e).trim()).filter(Boolean)
+      : (etiquetas ? [String(etiquetas).trim()] : []);
   }
   get isOutOfStock() { return this.stock <= 0; }
   get stockLabel() {

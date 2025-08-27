@@ -90,3 +90,7 @@ body {
   border-radius: 50%;
   opacity: 0.98;
 }
+#form-admin .form-label { color: var(--color-3); font-weight: 700; }
+#form-admin .form-control { border-radius: 12px; border:1.5px solid var(--color-4); }
+#tabla-admin thead th { color: var(--color-3); font-weight: 800; }
+#tabla-admin tbody tr:hover { background: #f5f9ff; }
