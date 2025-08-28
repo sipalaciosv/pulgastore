@@ -1,4 +1,5 @@
 import { Product } from "../models/Product.js";
+import { ExternalAPI } from "./ExternalAPI.js";
 
 
 const LS_INV_KEY = "pulga_inventory_v1";
@@ -87,5 +88,71 @@ export class Inventory {
     p.stock = Math.max(0, p.stock - qty);
     this.save();
     return { ok: true, newStock: p.stock };
+  }
+ async refreshFromExternal() {
+  for (const p of this.all()) {
+    try {
+      let ext = null;
+
+      if (p.externalId != null) {
+        ext = await ExternalAPI.getProductById(Number(p.externalId));
+      } else {
+        const results = await ExternalAPI.searchProductByName(p.nombre);
+        ext = results[0] || null;
+      }
+
+      if (!ext) continue;
+
+      this.update(p.id, {
+        nombre: ext.title,                                 
+        precio: Number(ext.price) || p.precio,
+        stock: Number(ext.stock) || p.stock,
+        categoria: ext.category || p.categoria,
+        descripcion: ext.description || p.descripcion,
+        etiquetas: Array.isArray(ext.tags) ? ext.tags : (p.etiquetas || []),
+        imagen: ext.thumbnail || p.imagen,
+        externalId: Number(ext.id),                         
+        lastSync: new Date().toISOString()
+      });
+    } catch {
+      console.warn(`No se pudo actualizar el producto ID ${p.id} (${p.nombre}) desde la API externa.`);
+      await delay(200);
+    }
+  }
+  this.save();
+}
+
+  async importExternalProducts(limit = 6) {
+    const incoming = await ExternalAPI.getTopProducts(limit);
+    let added = 0, updated = 0;
+
+    const byExternalId = new Map(
+      this.all().filter(p => p.externalId != null).map(p => [Number(p.externalId), p])
+    );
+
+    incoming.forEach(src => {
+      const map = {
+        nombre: src.title,
+        precio: Number(src.price) || 0,
+        categoria: src.category || "",
+        stock: Number(src.stock) || 0,
+        descripcion: src.description || "",
+        etiquetas: Array.isArray(src.tags) ? src.tags : [],
+        imagen: src.thumbnail || (Array.isArray(src.images) ? src.images[0] : ""),
+        externalId: Number(src.id),
+        lastSync: new Date().toISOString()
+      };
+
+      const exists = byExternalId.get(Number(src.id));
+      if (exists) {
+        this.update(exists.id, map);
+        updated++;
+      } else {
+        this.create(map);
+        added++;
+      }
+    });
+
+    return { added, updated };
   }
 }
